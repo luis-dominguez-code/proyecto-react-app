@@ -1,35 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import { useState } from 'react'
+import Navbar from "./Navbar";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [cartItems, setCartItems] = useState(0);
+
+  const agregarAlCarrito = () => setCartItems(cartItems + 1);
+  const vaciarCarrito = () => setCartItems(0);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      <Navbar cartItems={cartItems} />
+      <main className="contenido">
+        <h1>Bienvenidos a Fighter Space</h1>
+        <p>Todo lo que necesitas para tu entrenamiento lo encontraras aqui.</p>
+        <button onClick={agregarAlCarrito}>Agregar al carrito</button>
+        <button onClick={vaciarCarrito}>Vaciar carrito</button>
+      </main>
+    </div>
+  );
 }
 
 export default App
