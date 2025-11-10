@@ -13,7 +13,7 @@ function Navbar({ cartItems }) {
 
         {}
         <li className="dropdown">
-          <span>Productos ⬇️</span>
+          <span>Productos</span>
           <ul className="dropdown-menu">
             <li><Link to="/productos">Catálogo</Link></li>
             <li><Link to="/productos/categoria/boxeo">Boxeo</Link></li>
